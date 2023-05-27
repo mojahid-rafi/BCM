@@ -15,6 +15,14 @@
     <!-- THEME STYLES-->
     <link href="assets/css/main.min.css" rel="stylesheet" />
     <!-- PAGE LEVEL STYLES-->
+
+    <link href="./assets/vendors/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="./assets/vendors/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <link href="./assets/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <link href="./assets/vendors/jquery-minicolors/jquery.minicolors.css" rel="stylesheet" />
+
+
+
 </head>
 
 <body class="fixed-navbar">
@@ -104,8 +112,16 @@
                         <li>
                             <a href="./blank.php">Blank Page</a>
                         </li>
+                        <li>
+                            <a href="./blank.php">Blank Page</a>
+                        </li>
+                        <li>
+                            <a href="./form_advanced.php">Form advanced</a>
+                        </li>
                     </ul>
                 </li>
+            
+                
 
             </ul>
         </div>
