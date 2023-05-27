@@ -101,6 +101,9 @@
                         <li>
                             <a href="./form_basic.php">Form Basic</a>
                         </li>
+                        <li>
+                            <a href="./blank.php">Blank Page</a>
+                        </li>
                     </ul>
                 </li>
 
