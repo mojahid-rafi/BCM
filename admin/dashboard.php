@@ -1,5 +1,6 @@
 <?php include ("./header.php"); ?>
 
+    <div class="content-wrapper">
 
     <!-- START PAGE CONTENT-->
     <div class="page-content fade-in-up">
@@ -545,7 +546,8 @@
             </a>
         </div>
     </div>
-    !-- END PAGE CONTENT-->
+
+    <!-- END PAGE CONTENT-->
 
 
 <?php include ("./footer.php"); ?>

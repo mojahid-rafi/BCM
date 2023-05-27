@@ -111,5 +111,3 @@
         </div>
     </nav>
     <!-- END SIDEBAR-->
-
-    <div class="content-wrapper">

@@ -1,5 +1,6 @@
 <?php include ("./header.php"); ?>
 
+    <div class="content-wrapper">
             <!-- START PAGE CONTENT-->
             <div class="page-heading">
                 <h1 class="page-title">Basic Form</h1>
