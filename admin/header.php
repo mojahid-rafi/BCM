@@ -118,6 +118,9 @@
                         <li>
                             <a href="./form_advanced.php">Form advanced</a>
                         </li>
+                        <li>
+                            <a href="./form_masks.php">Form masks</a>
+                        </li>
                     </ul>
                 </li>
             
