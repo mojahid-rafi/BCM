@@ -8,36 +8,32 @@
             <div class="col-lg-3 col-md-6">
                 <div class="ibox bg-success color-white widget-stat">
                     <div class="ibox-body">
-                        <h2 class="m-b-5 font-strong">201</h2>
-                        <div class="m-b-5">NEW ORDERS</div><i class="ti-shopping-cart widget-stat-icon"></i>
-                        <div><i class="fa fa-level-up m-r-5"></i><small>25% higher</small></div>
+                        <h2 class="m-b-5 font-strong">10</h2>
+                        <div class="m-b-5">Blood Request</div><i class="ti-shopping-cart widget-stat-icon"></i>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="ibox bg-info color-white widget-stat">
                     <div class="ibox-body">
-                        <h2 class="m-b-5 font-strong">1250</h2>
-                        <div class="m-b-5">UNIQUE VIEWS</div><i class="ti-bar-chart widget-stat-icon"></i>
-                        <div><i class="fa fa-level-up m-r-5"></i><small>17% higher</small></div>
+                        <h2 class="m-b-5 font-strong">25</h2>
+                        <div class="m-b-5">New Donor</div><i class="ti-bar-chart widget-stat-icon"></i>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="ibox bg-warning color-white widget-stat">
                     <div class="ibox-body">
-                        <h2 class="m-b-5 font-strong">$1570</h2>
-                        <div class="m-b-5">TOTAL INCOME</div><i class="fa fa-money widget-stat-icon"></i>
-                        <div><i class="fa fa-level-up m-r-5"></i><small>22% higher</small></div>
+                        <h2 class="m-b-5 font-strong">1570</h2>
+                        <div class="m-b-5">Total Donor</div><i class="fa fa-heart widget-stat-icon"></i>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="ibox bg-danger color-white widget-stat">
                     <div class="ibox-body">
-                        <h2 class="m-b-5 font-strong">108</h2>
-                        <div class="m-b-5">NEW USERS</div><i class="ti-user widget-stat-icon"></i>
-                        <div><i class="fa fa-level-down m-r-5"></i><small>-12% Lower</small></div>
+                        <h2 class="m-b-5 font-strong">3</h2>
+                        <div class="m-b-5">Campaign Request</div><i class="ti-user widget-stat-icon"></i>
                     </div>
                 </div>
             </div>
@@ -49,7 +45,6 @@
                         <div class="flexbox mb-4">
                             <div>
                                 <h3 class="m-0">Statistics</h3>
-                                <div>Your shop sales analytics</div>
                             </div>
                             <div class="d-inline-flex">
                                 <div class="px-3" style="border-right: 1px solid rgba(0,0,0,.1);">
@@ -77,28 +72,38 @@
             <div class="col-lg-4">
                 <div class="ibox">
                     <div class="ibox-head">
-                        <div class="ibox-title">Statistics</div>
+                        <div class="ibox-title">Blood Group Wise Donor</div>
                     </div>
                     <div class="ibox-body">
                         <div class="row align-items-center">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <canvas id="doughnut_chart" style="height:160px;"></canvas>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="m-b-20 text-success"><i class="fa fa-circle-o m-r-10"></i>Desktop 52%</div>
-                                <div class="m-b-20 text-info"><i class="fa fa-circle-o m-r-10"></i>Tablet 27%</div>
-                                <div class="m-b-20 text-warning"><i class="fa fa-circle-o m-r-10"></i>Mobile 21%</div>
                             </div>
                         </div>
                         <ul class="list-group list-group-divider list-group-full">
-                            <li class="list-group-item">Chrome
-                                <span class="float-right text-success"><i class="fa fa-caret-up"></i> 24%</span>
+                            <li class="list-group-item">A Positive (A+) :
+                                <span class="float-right"><i class="fa fa-caret-up"></i> 24%</span>
                             </li>
-                            <li class="list-group-item">Firefox
-                                <span class="float-right text-success"><i class="fa fa-caret-up"></i> 12%</span>
+                            <li class="list-group-item">A Negative (A-) :
+                                <span class="float-right"><i class="fa fa-caret-up"></i> 12%</span>
                             </li>
-                            <li class="list-group-item">Opera
-                                <span class="float-right text-danger"><i class="fa fa-caret-down"></i> 4%</span>
+                            <li class="list-group-item">B Positive (B+) :
+                                <span class="float-right"><i class="fa fa-caret-down"></i> 4%</span>
+                            </li>
+                            <li class="list-group-item">B Negative (B-) :
+                                <span class="float-right"><i class="fa fa-caret-down"></i> 4%</span>
+                            </li>
+                            <li class="list-group-item">O Positive (O+) :
+                                <span class="float-right"><i class="fa fa-caret-down"></i> 4%</span>
+                            </li>
+                            <li class="list-group-item">O  Negative (O-) :
+                                <span class="float-right"><i class="fa fa-caret-down"></i> 4%</span>
+                            </li>
+                            <li class="list-group-item">AB Positive (AB+) :
+                                <span class="float-right"><i class="fa fa-caret-down"></i> 4%</span>
+                            </li>
+                            <li class="list-group-item">AB Negative (AB-) :
+                                <span class="float-right"><i class="fa fa-caret-down"></i> 4%</span>
                             </li>
                         </ul>
                     </div>
