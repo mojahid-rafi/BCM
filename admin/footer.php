@@ -1,7 +1,6 @@
 <!-- END PAGE CONTENT-->
 <footer class="page-footer">
     <div class="font-13">2023 &copy; <b>TeamError</b> - All rights reserved.</div>
-    <a class="px-4" href="http://themeforest.net/item/adminca-responsive-bootstrap-4-3-angular-4-admin-dashboard-template/20912589" target="_blank">BUY PREMIUM</a>
     <div class="to-top"><i class="fa fa-angle-double-up"></i></div>
 </footer>
 </div>
@@ -155,12 +154,12 @@
 <script src="./assets/vendors/jvectormap/jquery-jvectormap-us-aea-en.js" type="text/javascript"></script>
 
 <script src="./assets/vendors/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/jquery-knob/dist/jquery.knob.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/moment/min/moment.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/jquery-minicolors/jquery.minicolors.min.js" type="text/javascript"></script>
-    <script src="./assets/js/scripts/form-plugins.js" type="text/javascript"></script>
+<script src="./assets/vendors/jquery-knob/dist/jquery.knob.min.js" type="text/javascript"></script>
+<script src="./assets/vendors/moment/min/moment.min.js" type="text/javascript"></script>
+<script src="./assets/vendors/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="./assets/vendors/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+<script src="./assets/vendors/jquery-minicolors/jquery.minicolors.min.js" type="text/javascript"></script>
+<script src="./assets/js/scripts/form-plugins.js" type="text/javascript"></script>
 
 <!-- CORE SCRIPTS-->
 <script src="assets/js/app.min.js" type="text/javascript"></script>

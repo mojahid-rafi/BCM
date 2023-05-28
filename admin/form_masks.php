@@ -1,6 +1,4 @@
-<?php 
-include('header.php');
-?>
+<?php include('header.php'); ?>
 
         
         <div class="content-wrapper">
@@ -134,4 +132,5 @@ include('header.php');
                     </a>
                 </div>
             </div>
-           <?php include('footer.php')?>
+
+           <?php include('footer.php'); ?>
