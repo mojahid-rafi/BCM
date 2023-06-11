@@ -39,6 +39,10 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 form-group">
+                                            <label>Email</label>
+                                            <input class="form-control" type="email" placeholder="Phone">
+                                        </div>
+                                        <div class="col-sm-6 form-group">
                                             <label>Blood Group</label>
                                                 <select class="form-control">
                                                     <option value="">---SELECT BLOOD GROUP---</option>
@@ -52,22 +56,25 @@
                                                     <option value="AB negative">AB Negative (AB-)</option>
                                                 </select>
                                         </div>
-                                        <div class="col-sm-6 form-group">
-                                            <label for="division">Division</label>
-                                                <select name="division" id="division"class="form-control">
-                                                    <option value="">---SELECT DIVISION---</option>
-                                                    <option value="Dhaka">Dhaka</option>
-                                                    <option value="Barisal">Barisal</option>
-                                                    <option value="Chittagong">Chittagong</option>
-                                                    <option value="Khulna">Khulna</option>
-                                                    <option value="Mymensingh">Mymensingh</option>
-                                                    <option value="Rajshahi">Rajshahi</option>
-                                                    <option value="Rangpur">Rangpur</option>
-                                                    <option value="Sylhet">Sylhet</option>
-                                                </select>
-                                        </div>
+                                        
                                     </div>
                                     <div class="row">
+                                        <div class="col-sm-6 form-group">
+                                                <label for="division">Division</label>
+                                                    <select name="division" id="division"class="form-control">
+                                                        <option value="">---SELECT DIVISION---</option>
+                                                        <option value="Dhaka">Dhaka</option>
+                                                        <option value="Barisal">Barisal</option>
+                                                        <option value="Chittagong">Chittagong</option>
+                                                        <option value="Khulna">Khulna</option>
+                                                        <option value="Mymensingh">Mymensingh</option>
+                                                        <option value="Rajshahi">Rajshahi</option>
+                                                        <option value="Rangpur">Rangpur</option>
+                                                        <option value="Sylhet">Sylhet</option>
+                                                    </select>
+                                            </div>
+
+
                                         <div class="col-sm-6 form-group">
                                             <label>District</label>
                                                 <select name="district" id="district" class="form-control">
@@ -138,20 +145,23 @@
                                                     <option value="Thakurgaon">Thakurgaon</option>
                                             </select>
                                         </div>
+
+                                    </div>
+                                    <div class="row">
                                         <div class="col-sm-6 form-group">
-                                            <label for="division">Thana</label>
+                                                <label for="division">Thana</label>
                                                 <select name="thana" id="thana" class="form-control">
                                                     <option value="">---SELECT THANA---</option>
                                                     <option value="banani">Banani</option>
                                                     <option value="pallabi">Pallabi</option>
                                                     <option value="badda">Badda</option>
                                                 </select>
-                                        </div>
+                                            </div>
 
-                                        <div class="col-sm-12 form-group">
-                                            <label>Area</label>
-                                            <input class="form-control" type="password" placeholder="Your location">
-                                         </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label>Area</label>
+                                                <input class="form-control" type="password" placeholder="Your location">
+                                            </div>
                                     </div>
 
                                     <div class="row">
@@ -175,10 +185,10 @@
                                         </div>
                                         <div class="col-md-6 form-group">
                                             <label for="">Gender</label>
-                                            <SELect class="form-control" name="situation">
+                                            <SELect class="form-control" name="gender">
                                                 <option value="Ready">---Select Gender---</option>
-                                                <option value="Ready">Male</option>
-                                                <option value="Not Ready">Female</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
                                             </SELect>
                                         </div>
                                        
