@@ -30,21 +30,21 @@
                                     <div class="row">
                                         <div class="col-sm-6 form-group">
                                             <label>Name</label>
-                                            <input class="form-control" type="text" placeholder="Name">
+                                            <input name="name" class="form-control" type="text" placeholder="Name">
                                         </div>
                                         <div class="col-sm-6 form-group">
                                             <label>Phone</label>
-                                            <input class="form-control" type="email" placeholder="Phone">
+                                            <input name="phone" class="form-control" type="text" placeholder="Phone">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 form-group">
                                             <label>Email</label>
-                                            <input class="form-control" type="email" placeholder="Phone">
+                                            <input name="email" class="form-control" type="email" placeholder="Phone">
                                         </div>
                                         <div class="col-sm-6 form-group">
                                             <label>Blood Group</label>
-                                                <select class="form-control">
+                                                <select name="bgroup" class="form-control">
                                                     <option value="">---SELECT BLOOD GROUP---</option>
                                                     <option value="A positive">A Positive (A+)</option>
                                                     <option value="A  negative">A Negative (A-)</option>
