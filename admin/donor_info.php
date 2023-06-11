@@ -151,16 +151,16 @@
                                         <div class="col-sm-6 form-group">
                                                 <label for="division">Thana</label>
                                                 <select name="thana" id="thana" class="form-control">
-                                                    <option value="">---SELECT THANA---</option>
-                                                    <option value="banani">Banani</option>
-                                                    <option value="pallabi">Pallabi</option>
-                                                    <option value="badda">Badda</option>
+                                                        <option value="">---SELECT THANA---</option>
+                                                        <option value="banani">Banani</option>
+                                                        <option value="pallabi">Pallabi</option>
+                                                        <option value="badda">Badda</option>
                                                 </select>
                                             </div>
 
                                             <div class="col-sm-6 form-group">
                                                 <label>Area</label>
-                                                <input class="form-control" type="password" placeholder="Your location">
+                                                <input name="area" class="form-control" type="password" placeholder="Your location">
                                             </div>
                                     </div>
 
@@ -197,7 +197,7 @@
 
                                     <div class="row">
                                         <div class="col-md-12 form-group">
-                                            <button class="form-control btn btn-default" type="submit">Submit</button>
+                                            <button name="submit" class="form-control btn btn-default" type="submit">Submit</button>
                                         </div>
                                     </div>
                                 </form>
