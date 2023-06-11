@@ -19,10 +19,9 @@
                 <div class="col-md-12">
                     <div class="ibox">
                         <!-- Do you work here-->
-                        <div class="ibox-head">
-
+                        <div class="ibox-head justify-content-end">
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary align-right" data-toggle="modal" data-target="#DonorAdd">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DonorAdd">
                                 Add Donor
                             </button>
                         </div>
@@ -50,8 +49,8 @@
                                       <td>10 Days</td>
                                       <td>Ready To Donate</td>
                                       <td>
-                                          <button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil font-14"></i></button>
-                                          <button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button>
+                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-pencil font-14"></i></a>
+                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-trash font-14"></i></a>
                                       </td>
                                   </tr>
                                   <tr>
@@ -62,8 +61,8 @@
                                       <td>10 Days</td>
                                       <td>Ready To Donate</td>
                                       <td>
-                                          <button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil font-14"></i></button>
-                                          <button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button>
+                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-pencil font-14"></i></a>
+                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-trash font-14"></i></a>
                                       </td>
                                   </tr>
                                   <tr>
@@ -74,8 +73,8 @@
                                       <td>10 Days</td>
                                       <td>Ready To Donate</td>
                                       <td>
-                                          <button class="btn btn-default btn-xs m-r-5" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil font-14"></i></button>
-                                          <button class="btn btn-default btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash font-14"></i></button>
+                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-pencil font-14"></i></a>
+                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-trash font-14"></i></a>
                                       </td>
                                   </tr>
                                   </tbody>
