@@ -156,12 +156,12 @@
 
                                     <div class="row">
                                         <div class="col-sm-6 form-group">
-                                            <label for="dob">Date Of Birth</label>
+                                            <label for="">Date Of Birth</label>
                                             <input type="date" class="form-control"  name="dob" id="dob">
                                         </div>
                                         <div class="col-sm-6 form-group">
-                                            <label for="dob">Last Donation Date</label>
-                                            <input type="date" class="form-control"  name="dob" id="dob" disabled>
+                                            <label for="">Last Donation Date</label>
+                                            <input type="date" class="form-control"  name="lastdob" id="lastdob" disabled>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -186,9 +186,9 @@
 
 
                                     <div class="row">
-                                    <div class="col-md-12 form-group">
-                                        <button class="form-control btn btn-default" type="submit">Submit</button>
-                                    </div>
+                                        <div class="col-md-12 form-group">
+                                            <button class="form-control btn btn-default" type="submit">Submit</button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
