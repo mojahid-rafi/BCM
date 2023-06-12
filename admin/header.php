@@ -98,6 +98,15 @@
                         <li>
                             <a href="./blood_donation.php">Blood Donation</a>
                         </li>
+                        <li>
+                            <a href="./donor_info.php">Donor Information</a>
+                        </li>
+                        <li>
+                            <a href="./blood_request.php">Blood Request</a>
+                        </li>
+                        <li>
+                            <a href="./blood_club_info.php">Blood Club Info</a>
+                        </li>
                     </ul>
                 </li>
 
