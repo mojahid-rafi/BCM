@@ -95,6 +95,9 @@
                         <li>
                             <a href="./add-blood-donation.php">Add Donation</a>
                         </li>
+                        <li>
+                            <a href="./blood_donation.php">Blood Donation</a>
+                        </li>
                     </ul>
                 </li>
 
