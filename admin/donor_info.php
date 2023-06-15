@@ -15,24 +15,40 @@
   <!--    Enter Your Content Here-->
         <!-- form start -->
 <?php
+    $name = "";
+    $phone = "";
+    $email = "";
+    $pwd = "";
+    $bgroup = "";
+    $division = "";
+    $district = "";
+    $thana = "";
+    $area = "";
+    $dob = "";
+    $situation = "";
+    $gender = "";
     if(isset($_POST['submit'])){
-        $name =  $_POST['name']."<br>";
-        $phone =  $_POST['phone']."<br>";
-        $email =  $_POST['email']."<br>";
-        $bgroup =  $_POST['bgroup']."<br>";
-        $division =  $_POST['division']."<br>";
-        $district =  $_POST['district']."<br>";
-        $thana =  $_POST['thana']."<br>";
-        $area =  $_POST['area']."<br>";
-        $dob =  $_POST['dob']."<br>";
-        $situation =  $_POST['situation']."<br>";
-        $gender =  $_POST['gender']."<br>";
+        $name =  $_POST['name'];
+        $phone =  $_POST['phone'];
+        $email =  $_POST['email'];
+        $pwd =  $_POST['pwd'];
+        $bgroup =  $_POST['bgroup'];
+        $division =  $_POST['division'];
+        $district =  $_POST['district'];
+        $thana =  $_POST['thana'];
+        $area =  $_POST['area'];
+        $dob =  $_POST['dob'];
+        $situation =  $_POST['situation'];
+        $gender =  $_POST['gender'];
     };
 
     $con = new mysqli('localhost','root','','bcm');
 
-    $sql = "INSERT INTO `donor_info`(`name`, `gender`, `bloodGroup`, `dob`, `division_id`, `district_id`, `thana_id`, `area`, `email`, `phone`, `pwd`, `sts`) VALUES ('$name','$phone','$email','$bgroup','$division','$district','$thana','$area','$dob','[value-10]','[value-11]','[value-12]')";
+    $sql = "INSERT INTO `donor_info`(`name`, `gender`, `bloodGroup`, `dob`, `division_id`, `district_id`, `thana_id`, `area`, `email`, `phone`, `pwd`, `sts`) VALUES ('{$name}','{$phone}','{$email}','{$pwd}','{$bgroup}','{$division}','{$district}','{$thana}','{$area}','{$dob}','{$situation}','{$gender}')";
+
+    $con->query($sql)
 ?>
+
                 <div class="col-md-12">
                         <div class="ibox">
                             <div class="ibox-head">
