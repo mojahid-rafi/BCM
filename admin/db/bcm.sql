@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2023 at 08:47 AM
+-- Generation Time: Jun 15, 2023 at 08:57 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -121,22 +121,22 @@ CREATE TABLE `division` (
 
 CREATE TABLE `donor_info` (
   `id` int(11) NOT NULL,
-  `Name` varchar(150) NOT NULL,
-  `Gender` varchar(30) NOT NULL,
-  `BloodGroup` varchar(30) NOT NULL,
-  `Dob` varchar(30) NOT NULL,
-  `Division` varchar(30) NOT NULL,
-  `District` varchar(30) NOT NULL,
-  `Thana` varchar(30) NOT NULL,
-  `Area` varchar(50) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Phone` varchar(15) NOT NULL,
-  `Password` varchar(30) NOT NULL,
-  `LastDonationDate` datetime DEFAULT NULL,
-  `Status` varchar(30) NOT NULL,
-  `ClubID` int(11) NOT NULL,
-  `Createdat` timestamp NOT NULL DEFAULT current_timestamp(),
-  `Updatedat` datetime DEFAULT NULL
+  `name` varchar(150) NOT NULL,
+  `gender` varchar(30) NOT NULL,
+  `bloodGroup` varchar(30) NOT NULL,
+  `dob` varchar(30) NOT NULL,
+  `division_id` varchar(30) NOT NULL,
+  `district_id` varchar(30) NOT NULL,
+  `thana_id` varchar(30) NOT NULL,
+  `area` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `pwd` varchar(30) NOT NULL,
+  `last_dona_date` datetime DEFAULT NULL,
+  `sts` varchar(30) NOT NULL,
+  `club_id` int(11) NOT NULL,
+  `createdat` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
