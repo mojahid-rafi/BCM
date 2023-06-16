@@ -13,57 +13,70 @@
                 </ol>
             </div>
   <!--    Enter Your Content Here-->
-        <!-- form start -->
+       
+        <!-- connect with mysqli start -->
 <?php
-    $name = "";
-    $phone = "";
-    $email = "";
-    $pwd = "";
-    $bgroup = "";
-    $division = "";
-    $district = "";
-    $thana = "";
-    $area = "";
-    $dob = "";
-    $situation = "";
-    $gender = "";
-    if(isset($_POST['submit'])){
-        $name =  $_POST['name'];
-        $phone =  $_POST['phone'];
-        $email =  $_POST['email'];
-        $pwd =  $_POST['pwd'];
-        $bgroup =  $_POST['bgroup'];
-        $division =  $_POST['division'];
-        $district =  $_POST['district'];
-        $thana =  $_POST['thana'];
-        $area =  $_POST['area'];
-        $dob =  $_POST['dob'];
-        $situation =  $_POST['situation'];
-        $gender =  $_POST['gender'];
-    };
+    // $name = "";
+    // $phone = "";
+    // $email = "";
+    // $pwd = "";
+    // $bgroup = "";
+    // $division = "";
+    // $district = "";
+    // $thana = "";
+    // $area = "";
+    // $dob = "";
+    // $situation = "";
+    // $gender = "";
+    // if(isset($_POST['submit'])){
+    //     $name =  $_POST['name'];
+    //     $phone =  $_POST['phone'];
+    //     $email =  $_POST['email'];
+    //     $pwd =  $_POST['pwd'];
+    //     $bgroup =  $_POST['bgroup'];
+    //     $division =  $_POST['division'];
+    //     $district =  $_POST['district'];
+    //     $thana =  $_POST['thana'];
+    //     $area =  $_POST['area'];
+    //     $dob =  $_POST['dob'];
+    //     $situation =  $_POST['situation'];
+    //     $gender =  $_POST['gender'];
+    // };
 
-    $con = new mysqli('localhost','root','','bcm');
+    // $con = new mysqli('localhost','root','','bcm');
 
-    $sql = "INSERT INTO `donor_info`(`name`, `gender`, `bloodGroup`, `dob`, `division_id`, `district_id`, `thana_id`, `area`, `email`, `phone`, `pwd`, `sts`) VALUES ('{$name}','{$phone}','{$email}','{$pwd}','{$bgroup}','{$division}','{$district}','{$thana}','{$area}','{$dob}','{$situation}','{$gender}')";
+    // $sql = "INSERT INTO `donor_info`(`name`, `gender`, `bloodGroup`, `dob`, `division_id`, `district_id`, `thana_id`, `area`, `email`, `phone`, `pwd`, `sts`) VALUES ('{$name}','{$phone}','{$email}','{$pwd}','{$bgroup}','{$division}','{$district}','{$thana}','{$area}','{$dob}','{$situation}','{$gender}')";
 
-    $con->query($sql)
+    // $con->query($sql)
 ?>
-
+<!-- connect with mysqli end -->
+<!-- modal button start -->
+<div class="page-content fade-in-up">
+            <div class="row">
                 <div class="col-md-12">
-                        <div class="ibox">
-                            <div class="ibox-head">
-                                <div class="ibox-title">Basic form</div>
-                                <div class="ibox-tools">
-                                    <a class="ibox-collapse"><i class="fa fa-minus"></i></a>
-                                    <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item">option 1</a>
-                                        <a class="dropdown-item">option 2</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ibox-body">
-                                <form action="" method="POST">
+                    <div class="ibox">
+        <!-- modal button -->
+        <div class="ibox-head justify-content-end">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DonorAdd">
+                Add Donation
+            </button>
+        </div>
+        <!-- modal button end -->
+
+ <!-- form start -->
+
+ <div class="modal fade" id="DonorAdd" tabindex="-1" role="dialog" aria-labelledby="DonorAdd" aria-hidden="true">
+                              <form action="post" method="POST">
+                                  <div class="modal-dialog modal-lg" role="document">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Add New Blood Donor</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                              </button>
+                                          </div>
+                                          <div class="modal-body">
                                     <div class="row">
                                         <div class="col-sm-6 form-group">
                                             <label>Name</label>
@@ -236,21 +249,26 @@
                                                 <option value="Not Ready">Not Ready</option>
                                             </SELect>
                                         </div>
-
-                                       
-                                    </div>
-
-
-                                    <div class="row">
                                         <div class="col-12 form-group">
                                             <!-- <button name="submit" class="form-control btn btn-default" type="submit">Submit</button> -->
                                             <input name="submit" type="submit" class="btn btn-default" value="Submit">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-        <!-- form end -->
+                                                </div>
 
+                                       
+                                            </div>
+                                         </div>
+
+                                        <div class="row">
+                                    </div>
+                                        
+                                </div>
+                                    <div class="modal-footer">
+                              </form>
+                          </div>
+        <!-- modal end -->
+                    </div>        
+                </div>
+            </div>
+        </div>
+        
 <?php include ("./footer.php"); ?>

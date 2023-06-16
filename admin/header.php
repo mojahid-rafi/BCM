@@ -107,6 +107,12 @@
                         <li>
                             <a href="./blood_club_info.php">Blood Club Info</a>
                         </li>
+                        <li>
+                            <a href="./feedback.php">Feedback</a>
+                        </li>
+                        <li>
+                            <a href="./campaign_request.php">Campaign Request</a>
+                        </li>
                     </ul>
                 </li>
 
