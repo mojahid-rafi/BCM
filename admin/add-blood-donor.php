@@ -18,6 +18,7 @@
 
             $name =  $_POST['name'];
             $phone =  $_POST['phone'];
+            $alt_phone =  $_POST['alt_phone'];
             $email =  $_POST['email'];
             $pwd =  $_POST['pwd'];
             $bgroup =  $_POST['blood_group'];
@@ -30,7 +31,7 @@
             $gender =  $_POST['gender'];
 
 
-            $sql = "INSERT INTO donors_info(name,gender,blood_group,dob,division_id,district_id,thana_id,area,email,phone,pwd,sts,club_id) values ('{$name}','{$gender}','{$bgroup}','{$dob}','{$division}','{$district}','{$thana}','{$area}','{$email}','{$phone}','{$pwd}','{$sts}','');";
+            $sql = "INSERT INTO donors_info(name,gender,blood_group,dob,division_id,district_id,thana_id,area,email,phone,alt_phone,pwd,sts,club_id) values ('{$name}','{$gender}','{$bgroup}','{$dob}','{$division}','{$district}','{$thana}','{$area}','{$email}','{$phone}','{$pwd}','{$sts}','');";
             $con->query($sql);
         };
 
