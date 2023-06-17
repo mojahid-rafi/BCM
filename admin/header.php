@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>Dashboard - Blood Club Management System By Team Error</title>
     <!-- GLOBAL MAINLY STYLES-->
-    <link href="./assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="./assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="./assets/vendors/themify-icons/css/themify-icons.css" rel="stylesheet" />
+    <link href="./assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="./assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="./assets/vendors/themify-icons/css/themify-icons.css" rel="stylesheet"/>
     <!-- PLUGINS STYLES-->
-    <link href="./assets/vendors/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
-    <link href="./assets/vendors/select2/dist/css/select2.min.css" rel="stylesheet" />
-    <link href="./assets/vendors/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
-    <link href="./assets/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
-    <link href="./assets/vendors/jquery-minicolors/jquery.minicolors.css" rel="stylesheet" />
+    <link href="./assets/vendors/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet"/>
+    <link href="./assets/vendors/select2/dist/css/select2.min.css" rel="stylesheet"/>
+    <link href="./assets/vendors/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+    <link href="./assets/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet"/>
+    <link href="./assets/vendors/jquery-minicolors/jquery.minicolors.css" rel="stylesheet"/>
     <!-- THEME STYLES-->
-    <link href="assets/css/main.min.css" rel="stylesheet" />
+    <link href="assets/css/main.min.css" rel="stylesheet"/>
     <!-- PAGE LEVEL STYLES-->
 
 </head>
@@ -54,7 +54,7 @@
             <ul class="nav navbar-toolbar">
                 <li class="dropdown dropdown-user">
                     <a class="nav-link dropdown-toggle link" data-toggle="dropdown">
-                        <img src="./assets/img/admin-avatar.png" />
+                        <img src="./assets/img/admin-avatar.png"/>
                         <span></span>Admin<i class="fa fa-angle-down m-l-5"></i></a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Profile</a>
@@ -74,10 +74,12 @@
         <div id="sidebar-collapse">
             <div class="admin-block d-flex">
                 <div>
-                    <img src="./assets/img/admin-avatar.png" width="45px" />
+                    <img src="./assets/img/admin-avatar.png" width="45px"/>
                 </div>
                 <div class="admin-info">
-                    <div class="font-strong">Team Error</div><small>Administrator</small></div>
+                    <div class="font-strong">Team Error</div>
+                    <small>Administrator</small>
+                </div>
             </div>
             <ul class="side-menu metismenu">
                 <li>
@@ -132,8 +134,7 @@
                         </li>
                     </ul>
                 </li>
-            
-                
+
 
             </ul>
         </div>

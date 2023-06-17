@@ -1,0 +1,16 @@
+{
+    "name": "bcm/bcm",
+    "description": "Blood Club Management",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mojahid Rafi",
+            "email": "mojahid.rafi17@gmail.com"
+        }
+    ],
+    "require": {}
+}
