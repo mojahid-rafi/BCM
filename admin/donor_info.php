@@ -16,38 +16,38 @@
        
         <!-- connect with mysqli start -->
 <?php
-    // $name = "";
-    // $phone = "";
-    // $email = "";
-    // $pwd = "";
-    // $bgroup = "";
-    // $division = "";
-    // $district = "";
-    // $thana = "";
-    // $area = "";
-    // $dob = "";
-    // $situation = "";
-    // $gender = "";
-    // if(isset($_POST['submit'])){
-    //     $name =  $_POST['name'];
-    //     $phone =  $_POST['phone'];
-    //     $email =  $_POST['email'];
-    //     $pwd =  $_POST['pwd'];
-    //     $bgroup =  $_POST['bgroup'];
-    //     $division =  $_POST['division'];
-    //     $district =  $_POST['district'];
-    //     $thana =  $_POST['thana'];
-    //     $area =  $_POST['area'];
-    //     $dob =  $_POST['dob'];
-    //     $situation =  $_POST['situation'];
-    //     $gender =  $_POST['gender'];
-    // };
+    $name = "";
+    $phone = "";
+    $email = "";
+    $pwd = "";
+    $bgroup = "";
+    $division = "";
+    $district = "";
+    $thana = "";
+    $area = "";
+    $dob = "";
+    $situation = "";
+    $gender = "";
+    if(isset($_POST['submit'])){
+        $name =  $_POST['name'];
+        $phone =  $_POST['phone'];
+        $email =  $_POST['email'];
+        $pwd =  $_POST['pwd'];
+        $bgroup =  $_POST['bgroup'];
+        $division =  $_POST['division'];
+        $district =  $_POST['district'];
+        $thana =  $_POST['thana'];
+        $area =  $_POST['area'];
+        $dob =  $_POST['dob'];
+        $situation =  $_POST['situation'];
+        $gender =  $_POST['gender'];
+    };
 
-    // $con = new mysqli('localhost','root','','bcm');
+    $con = new mysqli('localhost','root','','bcm');
 
-    // $sql = "INSERT INTO `donor_info`(`name`, `gender`, `bloodGroup`, `dob`, `division_id`, `district_id`, `thana_id`, `area`, `email`, `phone`, `pwd`, `sts`) VALUES ('{$name}','{$phone}','{$email}','{$pwd}','{$bgroup}','{$division}','{$district}','{$thana}','{$area}','{$dob}','{$situation}','{$gender}')";
+    $sql = "INSERT INTO `donor_info`(`name`, `gender`, `bloodGroup`, `dob`, `division_id`, `district_id`, `thana_id`, `area`, `email`, `phone`, `pwd`, `sts`) VALUES ('{$name}','{$phone}','{$email}','{$pwd}','{$bgroup}','{$division}','{$district}','{$thana}','{$area}','{$dob}','{$situation}','{$gender}')";
 
-    // $con->query($sql)
+    $con->query($sql)
 ?>
 <!-- connect with mysqli end -->
 <!-- modal button start -->
@@ -67,7 +67,7 @@
  <!-- form start -->
 
  <div class="modal fade" id="DonorAdd" tabindex="-1" role="dialog" aria-labelledby="DonorAdd" aria-hidden="true">
-                              <form action="post" method="POST">
+                              <form action="" method="POST">
                                   <div class="modal-dialog modal-lg" role="document">
                                       <div class="modal-content">
                                           <div class="modal-header">
@@ -226,14 +226,14 @@
 
                                             <div class="col-sm-6 form-group">
                                                 <label>Area</label>
-                                                <input name="area" class="form-control" type="text" placeholder="Your location">
+                                                <input name="area" class="form-control" type="text" placeholder="Your location" required>
                                             </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-sm-6 form-group">
                                             <label for="">Date Of Birth</label>
-                                            <input type="date" class="form-control"  name="dob" id="dob">
+                                            <input type="date" class="form-control"  name="dob" id="dob" required>
                                         </div>
                                         <div class="col-sm-6 form-group">
                                             <label for="">Last Donation Date</label>
