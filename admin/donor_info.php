@@ -16,19 +16,10 @@
        
         <!-- connect with mysqli start -->
 <?php
-    $name = "";
-    $phone = "";
-    $email = "";
-    $pwd = "";
-    $bgroup = "";
-    $division = "";
-    $district = "";
-    $thana = "";
-    $area = "";
-    $dob = "";
-    $situation = "";
-    $gender = "";
+    $con = new mysqli('localhost','root','','bcm');
+
     if(isset($_POST['submit'])){
+
         $name =  $_POST['name'];
         $phone =  $_POST['phone'];
         $email =  $_POST['email'];
@@ -41,13 +32,12 @@
         $dob =  $_POST['dob'];
         $situation =  $_POST['situation'];
         $gender =  $_POST['gender'];
+        
+        $sql = "INSERT INTO donor_info(name,gender,blood_group,dob,division_id,district_id,thana_id,area,email,phone,pwd,sts,club_id) values ('{$name}','{$gender}','{$bgroup}','{$dob}','{$division}','{$district}','{$thana}','{$area}','{$email}','{$phone}','{$pwd}',sts,'');";
+        $con->query($sql);
     };
 
-    $con = new mysqli('localhost','root','','bcm');
 
-    $sql = "INSERT INTO `donor_info`(`name`, `gender`, `bloodGroup`, `dob`, `division_id`, `district_id`, `thana_id`, `area`, `email`, `phone`, `pwd`, `sts`) VALUES ('{$name}','{$phone}','{$email}','{$pwd}','{$bgroup}','{$division}','{$district}','{$thana}','{$area}','{$dob}','{$situation}','{$gender}')";
-
-    $con->query($sql)
 ?>
 <!-- connect with mysqli end -->
 <!-- modal button start -->
@@ -252,23 +242,52 @@
                                         <div class="col-12 form-group">
                                             <!-- <button name="submit" class="form-control btn btn-default" type="submit">Submit</button> -->
                                             <input name="submit" type="submit" class="btn btn-default" value="Submit">
-                                                </div>
+                                            </div>
 
                                        
                                             </div>
                                          </div>
 
                                         <div class="row">
+                                            
                                     </div>
                                         
                                 </div>
                                     <div class="modal-footer">
                               </form>
+                             
                           </div>
         <!-- modal end -->
-                    </div>        
+                    </div>   
+                      
                 </div>
             </div>
+            
         </div>
+    <?php
+        $select = "SELECT * FROM donor_info";
+        $data = $con->query($select);
+        $donors = $data->fetch_all(MYSQLI_ASSOC);    
+    ?>
+     <table id="" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>phone</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($donors as $donor):?>
+            <tr>
+              <td> <?= $donor['id'];?></td>
+              <td> <?= $donor['name'];?></td>
+              <td> <?= $donor['phone'];?></td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+     </table>
+        
         
 <?php include ("./footer.php"); ?>

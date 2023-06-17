@@ -1,4 +1,27 @@
 <?php include ("./header.php"); ?>
+<?php $con = new mysqli('localhost','root','','bcm'); 
+
+if(isset($_POST['submit'])){
+
+    $name =  $_POST['name'];
+    $phone =  $_POST['phone'];
+    $email =  $_POST['email'];
+    $pwd =  $_POST['pwd'];
+    $bgroup =  $_POST['blood_group'];
+    $division =  $_POST['division'];
+    $district =  $_POST['district'];
+    $thana =  $_POST['thana'];
+    $area =  $_POST['area'];
+    $dob =  $_POST['dob'];
+    $sts =  $_POST['sts'];
+    $gender =  $_POST['gender'];
+    
+    $sql = "INSERT INTO donor_info(name,gender,blood_group,dob,division_id,district_id,thana_id,area,email,phone,pwd,sts,club_id) values ('{$name}','{$gender}','{$bgroup}','{$dob}','{$division}','{$district}','{$thana}','{$area}','{$email}','{$phone}','{$pwd}','{$sts}','');";
+    $con->query($sql);
+};
+
+?>
+
 
     <div class="content-wrapper">
         <!-- START PAGE CONTENT-->
@@ -13,6 +36,13 @@
         </div>
 
         <!--    Enter Your Content Here-->
+        <?php
+            $select = "SELECT * FROM donor_info";
+            $data = $con->query($select);
+            $donors = $data->fetch_all(MYSQLI_ASSOC);    
+        
+        ?>
+
 
         <div class="page-content fade-in-up">
             <div class="row">
@@ -25,65 +55,47 @@
                                 Add Donor
                             </button>
                         </div>
+
                         
                       <div class="ibox-body">
                           <div class="table-responsive">
                               <table class="table">
                                   <thead>
+                                 
                                   <tr>
                                       <th width="50px">SL</th>
                                       <th>Donor Name</th>
                                       <th>Blood Group</th>
                                       <th>Phone</th>
-                                      <th>Due Day</th>
+                                      <th>Area</th>
                                       <th>Status</th>
                                       <th>Actions</th>
                                   </tr>
                                   </thead>
+            
                                   <tbody>
-                                  <tr>
-                                      <td>1</td>
-                                      <td>Mojahid Rafi</td>
-                                      <td>B Positive (+)</td>
-                                      <td>01843885002</td>
-                                      <td>10 Days</td>
-                                      <td>Ready To Donate</td>
-                                      <td>
-                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-pencil font-14"></i></a>
-                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-trash font-14"></i></a>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>2</td>
-                                      <td>Mojahid Rafi</td>
-                                      <td>B Positive (+)</td>
-                                      <td>01843885002</td>
-                                      <td>10 Days</td>
-                                      <td>Ready To Donate</td>
-                                      <td>
-                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-pencil font-14"></i></a>
-                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-trash font-14"></i></a>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>3</td>
-                                      <td>Mojahid Rafi</td>
-                                      <td>B Positive (+)</td>
-                                      <td>01843885002</td>
-                                      <td>10 Days</td>
-                                      <td>Ready To Donate</td>
-                                      <td>
-                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-pencil font-14"></i></a>
-                                          <a href="#" class="btn btn-default btn-xs m-r-5"><i class="fa fa-trash font-14"></i></a>
-                                      </td>
-                                  </tr>
+                                    <?php foreach($donors as $donor):?>
+                                        <tr>
+                                            <td> <?= $donor['id'];?></td>
+                                            <td> <?= $donor['name'];?></td>
+                                            <td> <?= $donor['blood_group'];?></td>
+                                            <td> <?= $donor['phone'];?></td>
+                                            <td> <?= $donor['area'];?></td>
+                                            <td> <?= $donor['sts'];?></td>
+                                            <td>
+                                            <a href="?id=<?= $donor['id'];?>" class="btn btn-default btn-xs m-r-5"><i class="fa fa-pencil font-14"></i></a>
+                                             <a href="?id=<?= $donor['id'];?>" class="btn btn-default btn-xs m-r-5"><i class="fa fa-trash font-14"></i></a> 
+
+                                            </td>
+                                        </tr>  
+                                    <?php endforeach; ?>
                                   </tbody>
                               </table>
                           </div>
 
                           <!-- Modal -->
                           <div class="modal fade" id="DonorAdd" tabindex="-1" role="dialog" aria-labelledby="DonorAdd" aria-hidden="true">
-                              <form action="post">
+                              <form action="" method="POST">
                                   <div class="modal-dialog modal-lg" role="document">
                                       <div class="modal-content">
                                           <div class="modal-header">
@@ -96,12 +108,12 @@
                                               <div class="row">
                                                   <div class="col-sm-6 form-group">
                                                       <label>Name</label>
-                                                      <input class="form-control" type="text" placeholder="Name">
+                                                      <input name="name" class="form-control" type="text" placeholder="Name">
                                                   </div>
 
                                                   <div class="col-sm-6 form-group">
                                                       <label>Blood Group</label>
-                                                      <select name="blood group" id="blood group" class="form-control">
+                                                      <select name="blood_group" id="blood group" class="form-control">
                                                           <option value="">--SELECT BLOOD GROUP--</option>
                                                           <option value="A positive">A Positive (A+)</option>
                                                           <option value="A  negative">A Negative (A-)</option>
@@ -152,25 +164,34 @@
 
                                                   <div class="col-sm-6 form-group">
                                                       <label>Area</label>
-                                                      <input class="form-control" type="text" placeholder="area">
+                                                      <input name="area" class="form-control" type="text" placeholder="area">
                                                   </div>
                                                   <div class="col-sm-6 form-group">
                                                       <label>Email</label>
-                                                      <input class="form-control" type="email" placeholder="Email address">
+                                                      <input name="email" class="form-control" type="email" placeholder="Email address">
                                                   </div>
                                                   <div class="col-sm-6 form-group">
                                                       <label>Phone</label>
-                                                      <input class="form-control" type="text" placeholder="">
+                                                      <input name="phone" class="form-control" type="text" placeholder="">
                                                   </div>
                                                   <div class="col-sm-6 form-group">
                                                       <label>Password</label>
-                                                      <input class="form-control" type="password" placeholder="Password">
+                                                      <input name="pwd" class="form-control" type="password" placeholder="Password">
                                                   </div>
                                               </div>
+                                              <div class="row">
+                                                <div class="col-md-6 form-group">
+                                                    <label for="">Current Status</label>
+                                                    <SELect class="form-control" name="sts">
+                                                        <option value="">---Current Status---</option>
+                                                        <option value="Ready">Ready</option>
+                                                        <option value="Not Ready">Not Ready</option>
+                                                    </SELect>
+                                                </div>
                                           </div>
                                           <div class="modal-footer">
 <!--                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-                                              <button class="btn btn-default px-4" type="submit">Save</button>
+                                              <button class="btn btn-default px-4" name="submit" type="submit">Save</button>
                                           </div>
                                       </div>
                                   </div>

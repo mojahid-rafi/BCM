@@ -2,7 +2,7 @@ CREATE TABLE Donor_Info (
 id INT AUTO_INCREMENT not null PRIMARY KEY,
 name VARCHAR(150) not null,
 gender VARCHAR(30) not null,
-bloodGroup VARCHAR(30) not null,
+blood_group VARCHAR(30) not null,
 dob VARCHAR(30) not null,
 division_id VARCHAR(30) not null,
 district_id VARCHAR(30) not null,
@@ -14,8 +14,8 @@ pwd VARCHAR(30) not null,
 last_dona_date DATETIME null,
 sts VARCHAR(30) not null,
 club_id INT not null,
-createdat timestamp DEFAULT CURRENT_TIMESTAMP,
-updatedat DATETIME null
+created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+updated_at DATETIME null
 );
 
 #--------------------------------------------------------------------
