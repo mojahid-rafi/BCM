@@ -1,27 +1,4 @@
 <?php include ("./header.php"); ?>
-<?php $con = new mysqli('localhost','root','','bcm'); 
-
-if(isset($_POST['submit'])){
-
-    $name =  $_POST['name'];
-    $phone =  $_POST['phone'];
-    $email =  $_POST['email'];
-    $pwd =  $_POST['pwd'];
-    $bgroup =  $_POST['blood_group'];
-    $division =  $_POST['division'];
-    $district =  $_POST['district'];
-    $thana =  $_POST['thana'];
-    $area =  $_POST['area'];
-    $dob =  $_POST['dob'];
-    $sts =  $_POST['sts'];
-    $gender =  $_POST['gender'];
-    
-    $sql = "INSERT INTO donor_info(name,gender,blood_group,dob,division_id,district_id,thana_id,area,email,phone,pwd,sts,club_id) values ('{$name}','{$gender}','{$bgroup}','{$dob}','{$division}','{$district}','{$thana}','{$area}','{$email}','{$phone}','{$pwd}','{$sts}','');";
-    $con->query($sql);
-};
-
-?>
-
 
     <div class="content-wrapper">
         <!-- START PAGE CONTENT-->
@@ -35,11 +12,35 @@ if(isset($_POST['submit'])){
             </ol>
         </div>
 
+        <?php $con = new mysqli('localhost','root','','bcm');
+
+        if(isset($_POST['submit'])){
+
+            $name =  $_POST['name'];
+            $phone =  $_POST['phone'];
+            $email =  $_POST['email'];
+            $pwd =  $_POST['pwd'];
+            $bgroup =  $_POST['blood_group'];
+            $division =  $_POST['division'];
+            $district =  $_POST['district'];
+            $thana =  $_POST['thana'];
+            $area =  $_POST['area'];
+            $dob =  $_POST['dob'];
+            $sts =  $_POST['sts'];
+            $gender =  $_POST['gender'];
+
+
+            $sql = "INSERT INTO donors_info(name,gender,blood_group,dob,division_id,district_id,thana_id,area,email,phone,pwd,sts,club_id) values ('{$name}','{$gender}','{$bgroup}','{$dob}','{$division}','{$district}','{$thana}','{$area}','{$email}','{$phone}','{$pwd}','{$sts}','');";
+            $con->query($sql);
+        };
+
+        ?>
+
         <!--    Enter Your Content Here-->
         <?php
-            $select = "SELECT * FROM donor_info";
-            $data = $con->query($select);
-            $donors = $data->fetch_all(MYSQLI_ASSOC);    
+            $qry = "SELECT * FROM donors_info";
+            $DonorsInfo = $con->query($qry);
+            $Donors = $DonorsInfo->fetch_all(MYSQLI_ASSOC);
         
         ?>
 
@@ -74,7 +75,7 @@ if(isset($_POST['submit'])){
                                   </thead>
             
                                   <tbody>
-                                    <?php foreach($donors as $donor):?>
+                                    <?php foreach($Donors as $donor):?>
                                         <tr>
                                             <td> <?= $donor['id'];?></td>
                                             <td> <?= $donor['name'];?></td>
@@ -107,14 +108,9 @@ if(isset($_POST['submit'])){
                                           <div class="modal-body">
                                               <div class="row">
                                                   <div class="col-sm-6 form-group">
-                                                      <label>Name</label>
-                                                      <input name="name" class="form-control" type="text" placeholder="Name">
-                                                  </div>
-
-                                                  <div class="col-sm-6 form-group">
                                                       <label>Blood Group</label>
                                                       <select name="blood_group" id="blood group" class="form-control">
-                                                          <option value="">--SELECT BLOOD GROUP--</option>
+                                                          <option value="">--- SELECT BLOOD GROUP ---</option>
                                                           <option value="A positive">A Positive (A+)</option>
                                                           <option value="A  negative">A Negative (A-)</option>
                                                           <option value="B positive">B Positive (B+)</option>
@@ -125,14 +121,53 @@ if(isset($_POST['submit'])){
                                                           <option value="AB negative">AB Negative (AB-)</option>
                                                       </select>
                                                   </div>
+
+                                                  <div class="col-sm-6 form-group">
+                                                      <label>Name</label>
+                                                      <input name="name" class="form-control" type="text" placeholder="Name">
+                                                  </div>
+                                              </div>
+
+                                              <div class="row">
+                                                  <div class="col-md-6 form-group">
+                                                      <label for="">Gender</label>
+                                                      <SELect class="form-control" name="gender">
+                                                          <option value="Ready">--- Select Gender ---</option>
+                                                          <option value="Male">Male</option>
+                                                          <option value="Female">Female</option>
+                                                      </SELect>
+                                                  </div>
+
                                                   <div class="col-sm-6 form-group">
                                                       <label for="dob">DOB</label>
                                                       <input type="date" class="form-control"  name="dob" id="dob">
                                                   </div>
+                                              </div>
+
+                                              <div class="row">
+                                                  <div class="col-sm-6 form-group">
+                                                      <label>Primary Phone</label>
+                                                      <input name="phone" class="form-control" type="text" placeholder="">
+                                                  </div>
+
+                                                  <div class="col-sm-6 form-group">
+                                                      <label>Alternate Phone</label>
+                                                      <input name="alt_phone" class="form-control" type="text" placeholder="">
+                                                  </div>
+                                              </div>
+
+                                              <div class="row">
+                                                  <div class="col-sm-12 form-group">
+                                                      <label>Email</label>
+                                                      <input name="email" class="form-control" type="email" placeholder="Email address">
+                                                  </div>
+                                              </div>
+
+                                              <div class="row">
                                                   <div class="col-sm-6 form-group">
                                                       <label for="division">Division</label>
                                                       <select name="division" id="division"class="form-control">
-                                                          <option value="">--SELECT DIVISION--</option>
+                                                          <option value="">--- SELECT DIVISION ---</option>
                                                           <option value="Dhaka">Dhaka</option>
                                                           <option value="Barisal">Barisal</option>
                                                           <option value="Chittagong">Chittagong</option>
@@ -146,16 +181,18 @@ if(isset($_POST['submit'])){
                                                   <div class="col-sm-6 form-group">
                                                       <label for="District">Discrict</label>
                                                       <select name="district" id="district" class="form-control">
-                                                          <option value="">--SELECT YOUR DISCRICT--</option>
+                                                          <option value="">--- SELECT YOUR DISCRICT ---</option>
                                                           <option value="Bagerhat">Bagerhat</option>
                                                           <option value="Bandarban">Bandarban</option>
                                                       </select>
                                                   </div>
+                                              </div>
 
+                                              <div class="row">
                                                   <div class="col-sm-6 form-group">
                                                       <label>Thana/Upzila</label>
                                                       <select name="thana" id="thana" class="form-control">
-                                                          <option value="">--SELECT THANA--</option>
+                                                          <option value="">--- SELECT THANA ---</option>
                                                           <option value="banani">Banani</option>
                                                           <option value="pallabi">Pallabi</option>
                                                           <option value="badda">Badda</option>
@@ -166,29 +203,25 @@ if(isset($_POST['submit'])){
                                                       <label>Area</label>
                                                       <input name="area" class="form-control" type="text" placeholder="area">
                                                   </div>
-                                                  <div class="col-sm-6 form-group">
-                                                      <label>Email</label>
-                                                      <input name="email" class="form-control" type="email" placeholder="Email address">
-                                                  </div>
-                                                  <div class="col-sm-6 form-group">
-                                                      <label>Phone</label>
-                                                      <input name="phone" class="form-control" type="text" placeholder="">
-                                                  </div>
+                                              </div>
+
+                                              <div class="row">
                                                   <div class="col-sm-6 form-group">
                                                       <label>Password</label>
                                                       <input name="pwd" class="form-control" type="password" placeholder="Password">
                                                   </div>
+
+                                                  <div class="col-sm-6 form-group">
+                                                      <label for="">Current Status</label>
+                                                      <SELect class="form-control" name="sts">
+                                                          <option value="">--- Current Status ---</option>
+                                                          <option value="Ready">Ready To Donate</option>
+                                                          <option value="Not Ready">Waiting For Donate</option>
+                                                      </SELect>
+                                                  </div>
                                               </div>
-                                              <div class="row">
-                                                <div class="col-md-6 form-group">
-                                                    <label for="">Current Status</label>
-                                                    <SELect class="form-control" name="sts">
-                                                        <option value="">---Current Status---</option>
-                                                        <option value="Ready">Ready</option>
-                                                        <option value="Not Ready">Not Ready</option>
-                                                    </SELect>
-                                                </div>
                                           </div>
+
                                           <div class="modal-footer">
 <!--                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
                                               <button class="btn btn-default px-4" name="submit" type="submit">Save</button>

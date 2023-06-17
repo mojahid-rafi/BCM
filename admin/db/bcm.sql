@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 15, 2023 at 08:57 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jun 17, 2023 at 05:45 PM
+-- Server version: 10.10.2-MariaDB
+-- PHP Version: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,8 +27,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `blood_club_info`
 --
 
-CREATE TABLE `blood_club_info` (
-  `ID` int(11) NOT NULL,
+DROP TABLE IF EXISTS `blood_club_info`;
+CREATE TABLE IF NOT EXISTS `blood_club_info` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Club_Name` varchar(150) NOT NULL,
   `Founder` varchar(150) NOT NULL,
   `Phone` varchar(15) NOT NULL,
@@ -38,7 +39,8 @@ CREATE TABLE `blood_club_info` (
   `Thana` varchar(50) NOT NULL,
   `Area` varchar(150) NOT NULL,
   `Createdat` timestamp NOT NULL DEFAULT current_timestamp(),
-  `Updatedat` datetime DEFAULT NULL
+  `Updatedat` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -47,14 +49,16 @@ CREATE TABLE `blood_club_info` (
 -- Table structure for table `blood_donation`
 --
 
-CREATE TABLE `blood_donation` (
-  `ID` int(11) NOT NULL,
+DROP TABLE IF EXISTS `blood_donation`;
+CREATE TABLE IF NOT EXISTS `blood_donation` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Donor_id` int(11) NOT NULL,
   `Don_date` datetime DEFAULT NULL,
   `Hospital_Name` varchar(50) NOT NULL,
   `Address` varchar(150) NOT NULL,
   `Createdat` timestamp NOT NULL DEFAULT current_timestamp(),
-  `Updatedat` datetime DEFAULT NULL
+  `Updatedat` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -63,15 +67,17 @@ CREATE TABLE `blood_donation` (
 -- Table structure for table `campaign_request`
 --
 
-CREATE TABLE `campaign_request` (
-  `ID` int(11) NOT NULL,
+DROP TABLE IF EXISTS `campaign_request`;
+CREATE TABLE IF NOT EXISTS `campaign_request` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ClubID` int(11) NOT NULL,
   `Division` varchar(50) NOT NULL,
   `District` varchar(50) NOT NULL,
   `Thana` varchar(50) NOT NULL,
   `LocationType` varchar(50) NOT NULL,
   `LocName` varchar(50) NOT NULL,
-  `ApxTestCount` int(11) NOT NULL
+  `ApxTestCount` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -80,14 +86,16 @@ CREATE TABLE `campaign_request` (
 -- Table structure for table `complaint`
 --
 
-CREATE TABLE `complaint` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `complaint`;
+CREATE TABLE IF NOT EXISTS `complaint` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(150) NOT NULL,
   `Subject` varchar(50) NOT NULL,
   `Description` text NOT NULL,
   `Feedback` text NOT NULL,
   `Createdat` timestamp NOT NULL DEFAULT current_timestamp(),
-  `Updatedat` datetime DEFAULT NULL
+  `Updatedat` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -96,10 +104,12 @@ CREATE TABLE `complaint` (
 -- Table structure for table `district`
 --
 
-CREATE TABLE `district` (
-  `ID` int(11) NOT NULL,
+DROP TABLE IF EXISTS `district`;
+CREATE TABLE IF NOT EXISTS `district` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Division_ID` int(11) NOT NULL,
-  `District_Name` varchar(50) NOT NULL
+  `District_Name` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -108,36 +118,48 @@ CREATE TABLE `district` (
 -- Table structure for table `division`
 --
 
-CREATE TABLE `division` (
-  `ID` int(11) NOT NULL,
-  `Division_Name` varchar(50) NOT NULL
+DROP TABLE IF EXISTS `division`;
+CREATE TABLE IF NOT EXISTS `division` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Division_Name` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donor_info`
+-- Table structure for table `donors_info`
 --
 
-CREATE TABLE `donor_info` (
-  `id` int(11) NOT NULL,
-  `name` varchar(150) NOT NULL,
-  `gender` varchar(30) NOT NULL,
-  `bloodGroup` varchar(30) NOT NULL,
-  `dob` varchar(30) NOT NULL,
-  `division_id` varchar(30) NOT NULL,
-  `district_id` varchar(30) NOT NULL,
-  `thana_id` varchar(30) NOT NULL,
-  `area` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `phone` varchar(15) NOT NULL,
-  `pwd` varchar(30) NOT NULL,
+DROP TABLE IF EXISTS `donors_info`;
+CREATE TABLE IF NOT EXISTS `donors_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL DEFAULT '',
+  `gender` varchar(30) NOT NULL DEFAULT '',
+  `blood_group` varchar(30) NOT NULL DEFAULT '',
+  `dob` varchar(30) DEFAULT NULL,
+  `phone` varchar(15) NOT NULL DEFAULT '',
+  `alt_phone` varchar(15) NOT NULL DEFAULT '',
+  `email` varchar(50) NOT NULL DEFAULT '',
+  `division_id` varchar(30) NOT NULL DEFAULT '',
+  `district_id` varchar(30) NOT NULL DEFAULT '',
+  `thana_id` varchar(30) NOT NULL DEFAULT '',
+  `area` varchar(50) NOT NULL DEFAULT '',
+  `pwd` varchar(30) NOT NULL DEFAULT '',
+  `sts` varchar(30) NOT NULL DEFAULT '',
   `last_dona_date` datetime DEFAULT NULL,
-  `sts` varchar(30) NOT NULL,
-  `club_id` int(11) NOT NULL,
-  `createdat` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updatedat` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `club_id` varchar(20) NOT NULL DEFAULT '',
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `donors_info`
+--
+
+INSERT INTO `donors_info` (`id`, `name`, `gender`, `blood_group`, `dob`, `phone`, `alt_phone`, `email`, `division_id`, `district_id`, `thana_id`, `area`, `pwd`, `sts`, `last_dona_date`, `club_id`, `created_at`, `updated_at`) VALUES
+(1, 'Mojahid Rafi', 'Male', 'B positive', '2000-01-30', '01843885002', '', 'rafi@gmail.com', 'Chittagong', 'Bagerhat', 'banani', 'Mohammadpur', 'rafi@123', 'Ready', NULL, '', '2023-06-17 17:44:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -145,12 +167,14 @@ CREATE TABLE `donor_info` (
 -- Table structure for table `feedback`
 --
 
-CREATE TABLE `feedback` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `feedback`;
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(150) NOT NULL,
   `Feedback` text NOT NULL,
   `Createdat` timestamp NOT NULL DEFAULT current_timestamp(),
-  `Updatedat` datetime DEFAULT NULL
+  `Updatedat` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -159,8 +183,9 @@ CREATE TABLE `feedback` (
 -- Table structure for table `request_blood`
 --
 
-CREATE TABLE `request_blood` (
-  `ID` int(11) NOT NULL,
+DROP TABLE IF EXISTS `request_blood`;
+CREATE TABLE IF NOT EXISTS `request_blood` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Request_From` varchar(50) NOT NULL,
   `The_Date` datetime DEFAULT NULL,
   `Patient_Name` varchar(50) NOT NULL,
@@ -170,7 +195,8 @@ CREATE TABLE `request_blood` (
   `Days_Left` int(11) NOT NULL DEFAULT 0,
   `Loc_Info` varchar(150) NOT NULL,
   `Create_At` timestamp NOT NULL DEFAULT current_timestamp(),
-  `Update_At` datetime DEFAULT NULL
+  `Update_At` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -179,10 +205,12 @@ CREATE TABLE `request_blood` (
 -- Table structure for table `thana`
 --
 
-CREATE TABLE `thana` (
-  `ID` int(11) NOT NULL,
+DROP TABLE IF EXISTS `thana`;
+CREATE TABLE IF NOT EXISTS `thana` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `District_ID` int(11) NOT NULL,
-  `Name` varchar(150) NOT NULL
+  `Name` varchar(150) NOT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -191,155 +219,17 @@ CREATE TABLE `thana` (
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `ID` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `User_Name` varchar(150) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Phone` varchar(15) NOT NULL,
   `Password` varchar(150) NOT NULL,
   `Createdat` timestamp NOT NULL DEFAULT current_timestamp(),
-  `Updatedat` datetime DEFAULT NULL
+  `Updatedat` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `blood_club_info`
---
-ALTER TABLE `blood_club_info`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `blood_donation`
---
-ALTER TABLE `blood_donation`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `campaign_request`
---
-ALTER TABLE `campaign_request`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `complaint`
---
-ALTER TABLE `complaint`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `district`
---
-ALTER TABLE `district`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `division`
---
-ALTER TABLE `division`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `donor_info`
---
-ALTER TABLE `donor_info`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `feedback`
---
-ALTER TABLE `feedback`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `request_blood`
---
-ALTER TABLE `request_blood`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `thana`
---
-ALTER TABLE `thana`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `blood_club_info`
---
-ALTER TABLE `blood_club_info`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `blood_donation`
---
-ALTER TABLE `blood_donation`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `campaign_request`
---
-ALTER TABLE `campaign_request`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `complaint`
---
-ALTER TABLE `complaint`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `district`
---
-ALTER TABLE `district`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `division`
---
-ALTER TABLE `division`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `donor_info`
---
-ALTER TABLE `donor_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `feedback`
---
-ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `request_blood`
---
-ALTER TABLE `request_blood`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `thana`
---
-ALTER TABLE `thana`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
