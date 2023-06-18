@@ -1,8 +1,6 @@
 <?php
-require "../src/database.php";
-
 include("./header.php");
-
+require "../src/database.php";
 ?>
 
     <div class="content-wrapper">
@@ -120,7 +118,7 @@ include("./header.php");
                                                 <div class="col-sm-6 form-group">
                                                     <label>Blood Group</label>
                                                     <select name="blood_group" id="blood group" class="form-control">
-                                                        <option value="">--- SELECT BLOOD GROUP ---</option>
+                                                        <option value="">--- Select Blood Group ---</option>
                                                         <option value="A positive">A Positive (A+)</option>
                                                         <option value="A  negative">A Negative (A-)</option>
                                                         <option value="B positive">B Positive (B+)</option>
@@ -158,13 +156,13 @@ include("./header.php");
                                             <div class="row">
                                                 <div class="col-sm-6 form-group">
                                                     <label>Primary Phone</label>
-                                                    <input name="phone" class="form-control" type="text" placeholder="">
+                                                    <input name="phone" class="form-control" type="text" placeholder="Primary Contact">
                                                 </div>
 
                                                 <div class="col-sm-6 form-group">
                                                     <label>Alternate Phone</label>
                                                     <input name="alt_phone" class="form-control" type="text"
-                                                           placeholder="">
+                                                           placeholder="Alternate Contact">
                                                 </div>
                                             </div>
 
@@ -180,7 +178,7 @@ include("./header.php");
                                                 <div class="col-sm-6 form-group">
                                                     <label for="division">Division</label>
                                                     <select name="division" id="division" class="form-control">
-                                                        <option value="">--- SELECT DIVISION ---</option>
+                                                        <option value="">--- Select Division ---</option>
                                                         <option value="Dhaka">Dhaka</option>
                                                         <option value="Barisal">Barisal</option>
                                                         <option value="Chittagong">Chittagong</option>
@@ -194,7 +192,7 @@ include("./header.php");
                                                 <div class="col-sm-6 form-group">
                                                     <label for="District">Discrict</label>
                                                     <select name="district" id="district" class="form-control">
-                                                        <option value="">--- SELECT YOUR DISCRICT ---</option>
+                                                        <option value="">--- Select District ---</option>
                                                         <option value="Bagerhat">Bagerhat</option>
                                                         <option value="Bandarban">Bandarban</option>
                                                     </select>
@@ -205,7 +203,7 @@ include("./header.php");
                                                 <div class="col-sm-6 form-group">
                                                     <label>Thana/Upzila</label>
                                                     <select name="thana" id="thana" class="form-control">
-                                                        <option value="">--- SELECT THANA ---</option>
+                                                        <option value="">--- Select Thana ---</option>
                                                         <option value="banani">Banani</option>
                                                         <option value="pallabi">Pallabi</option>
                                                         <option value="badda">Badda</option>
