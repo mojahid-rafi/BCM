@@ -213,7 +213,7 @@ require "../src/database.php";
                                                 <div class="col-sm-6 form-group">
                                                     <label>Area</label>
                                                     <input name="area" class="form-control" type="text"
-                                                           placeholder="area">
+                                                           placeholder="Area">
                                                 </div>
                                             </div>
 
